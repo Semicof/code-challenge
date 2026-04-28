@@ -17,7 +17,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <div className="relative flex min-h-dvh flex-col items-center justify-center bg-slate-50 px-4 py-8 transition-colors duration-300 dark:bg-[#0b1120]">
+        <div className="relative flex min-h-dvh flex-col items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 px-4 py-8 dark:from-[#050B14] dark:to-[#0B1A3A]">
           <Background />
 
           {/* Theme toggle - top right */}

@@ -53,8 +53,8 @@ export function TokenSelectModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open: boolean) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md bg-white dark:bg-[#131c31] border-slate-200 dark:border-slate-800 rounded-3xl p-0 gap-0 overflow-hidden">
-        <DialogHeader className="px-5 py-4 border-b border-slate-100 dark:border-slate-700/50">
+      <DialogContent className="sm:max-w-md rounded-[2rem] border border-white/80 bg-white/85 shadow-[0_16px_60px_rgba(15,23,42,0.08)] backdrop-blur-3xl dark:border-white/10 dark:bg-[#1e293b]/85 dark:shadow-[0_16px_60px_rgba(0,0,0,0.5)] p-0 gap-0 overflow-hidden">
+        <DialogHeader className="px-5 py-5 border-b border-white/50 dark:border-white/5">
           <DialogTitle className="text-lg font-bold text-slate-900 dark:text-white">
             Select a token
           </DialogTitle>
@@ -68,7 +68,7 @@ export function TokenSelectModal({
               placeholder="Search by token name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-10 h-12 bg-slate-100 dark:bg-[#0a1628] border-transparent focus-visible:ring-1 focus-visible:ring-blue-500 rounded-2xl"
+              className="pl-10 h-12 bg-white/50 border border-white/80 shadow-sm text-slate-900 placeholder:text-slate-400 dark:bg-black/20 dark:border-white/5 dark:text-white dark:placeholder:text-slate-500 focus-visible:ring-1 focus-visible:ring-blue-500 rounded-2xl"
             />
           </div>
         </div>
@@ -84,8 +84,8 @@ export function TokenSelectModal({
                   onClick={() => handleSelect(token)}
                   className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all duration-150 hover:scale-105 active:scale-95 ${
                     selectedToken?.currency === token.currency
-                      ? 'border-blue-500 bg-blue-50 text-blue-600 dark:border-blue-400 dark:bg-blue-900/30 dark:text-blue-300'
-                      : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:bg-blue-900/20'
+                      ? 'border-blue-500 bg-blue-50 text-blue-600 dark:border-blue-400 dark:bg-blue-900/40 dark:text-blue-300'
+                      : 'border-white/60 bg-white/50 text-slate-700 shadow-sm hover:border-blue-300 hover:bg-white/80 dark:border-white/10 dark:bg-black/20 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:bg-blue-900/30'
                   }`}
                 >
                   {token.hasIcon ? (
@@ -108,7 +108,7 @@ export function TokenSelectModal({
         )}
 
         {/* Divider */}
-        <div className="mx-5 mt-4 border-t border-slate-100 dark:border-slate-700/50" />
+        <div className="mx-5 mt-4 border-t border-white/50 dark:border-white/5" />
 
         {/* Token list */}
         <div className="max-h-[50vh] overflow-y-auto overscroll-contain px-2 py-2 sm:max-h-[40vh]">
@@ -125,8 +125,8 @@ export function TokenSelectModal({
                 onClick={() => handleSelect(token)}
                 className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 transition-colors duration-150 ${
                   selectedToken?.currency === token.currency
-                    ? 'bg-blue-50 dark:bg-blue-900/20'
-                    : 'hover:bg-slate-50 dark:hover:bg-slate-800/50'
+                    ? 'bg-white/60 dark:bg-blue-900/30'
+                    : 'hover:bg-white/40 dark:hover:bg-black/20'
                 }`}
               >
                 {/* Icon */}

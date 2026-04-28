@@ -8,7 +8,7 @@ import { SwapDetails } from './SwapDetails';
 import { SwapButton } from './SwapButton';
 
 import toast from 'react-hot-toast';
-import { Skeleton } from '../ui/Skeleton';
+import { Skeleton } from '../ui/skeleton';
 
 const TokenSelectModal = lazy(() =>
   import('./TokenSelectModal').then((mod) => ({ default: mod.TokenSelectModal })),
@@ -81,8 +81,7 @@ export function SwapCard() {
 
   return (
     <>
-      <div className="w-full max-w-[480px] rounded-3xl bg-white p-4 shadow-xl shadow-blue-900/5 dark:bg-[#131c31] dark:shadow-black/20 sm:p-5">
-
+      <div className="w-full max-w-[480px] rounded-[2.5rem] border border-white/80 bg-white/80 p-4 shadow-[0_16px_60px_rgba(15,23,42,0.08)] backdrop-blur-3xl dark:border-white/10 dark:bg-[#1e293b]/60 dark:shadow-[0_16px_60px_rgba(0,0,0,0.5)] sm:p-6">
         <div className="mb-3 flex items-center justify-between px-1">
           <h1 className="text-lg font-bold text-slate-900 dark:text-white">Swap Tokens</h1>
         </div>

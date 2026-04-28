@@ -28,7 +28,7 @@ export function SwapDetails({ sellToken, buyToken, exchangeRate, priceImpact }: 
         id="swap-details-toggle"
         type="button"
         onClick={() => setIsExpanded((prev) => !prev)}
-        className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm text-slate-500 transition-colors hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-[#0f1d32]"
+        className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/5"
       >
         <button
           type="button"
@@ -36,7 +36,7 @@ export function SwapDetails({ sellToken, buyToken, exchangeRate, priceImpact }: 
             e.stopPropagation();
             setIsReversed((prev) => !prev);
           }}
-          className="flex items-center gap-1 hover:text-slate-700 dark:hover:text-slate-200"
+          className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white transition-colors"
         >
           <span>
             1 {fromToken.currency} = {formatAmount(displayRate)} {toToken.currency}
@@ -87,7 +87,7 @@ export function SwapDetails({ sellToken, buyToken, exchangeRate, priceImpact }: 
 function DetailRow({
   label,
   value,
-  valueColor = 'text-slate-600 dark:text-slate-300',
+  valueColor = 'text-slate-700 dark:text-slate-200',
 }: {
   label: string;
   value: string;
@@ -95,7 +95,7 @@ function DetailRow({
 }) {
   return (
     <div className="flex items-center justify-between">
-      <span className="text-slate-400 dark:text-slate-500">{label}</span>
+      <span className="text-slate-500 dark:text-slate-400">{label}</span>
       <span className={valueColor}>{value}</span>
     </div>
   );

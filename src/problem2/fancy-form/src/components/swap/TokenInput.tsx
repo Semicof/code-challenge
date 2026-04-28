@@ -39,11 +39,10 @@ export function TokenInput({
 
   return (
     <div
-      className={`rounded-2xl p-4 transition-colors duration-200 ${
-        direction === 'sell'
-          ? 'bg-slate-100 dark:bg-[#0f1d32]'
-          : 'bg-slate-50 dark:bg-[#0a1628]'
-      }`}
+      className={`rounded-3xl p-4 transition-all duration-300 border ${direction === 'sell'
+          ? 'bg-white/50 border-white/80 shadow-sm dark:bg-black/20 dark:border-white/5'
+          : 'bg-white/30 border-white/40 dark:bg-black/40 dark:border-transparent'
+        } hover:bg-white/70 dark:hover:bg-black/40`}
     >
       {/* Label */}
       <div className="mb-2 flex items-center justify-between">
@@ -62,7 +61,7 @@ export function TokenInput({
           onChange={handleInputChange}
           disabled={disabled}
           autoComplete="off"
-          className="min-w-0 flex-1 border-0 bg-transparent px-0 text-3xl font-semibold text-slate-900 shadow-none outline-none focus-visible:ring-0 placeholder:text-slate-300 dark:text-white dark:placeholder:text-slate-600 sm:text-4xl"
+          className="min-w-0 flex-1 border-0 bg-transparent px-0 text-3xl font-semibold text-slate-900 shadow-none outline-none focus-visible:ring-0 placeholder:text-slate-300 dark:text-white dark:placeholder:text-slate-900 sm:text-4xl"
         />
 
         {/* Token Selector Pill */}
@@ -70,11 +69,10 @@ export function TokenInput({
           id={`${direction}-token-selector`}
           variant="outline"
           onClick={onTokenSelect}
-          className={`flex h-9 shrink-0 items-center gap-2 rounded-full px-3 py-5 font-semibold transition-all duration-200 hover:scale-105 active:scale-95 ${
-            token
-              ? 'bg-white shadow-sm hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white dark:border-slate-700'
-              : 'bg-blue-600 text-white shadow-md hover:bg-blue-700 border-transparent hover:text-white'
-          }`}
+          className={`flex h-9 shrink-0 items-center gap-2 rounded-full px-3 py-5 font-semibold shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-md active:scale-95 ${token
+              ? 'bg-white text-slate-800 border-slate-200/50 hover:bg-slate-50 hover:border-slate-300/50 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white dark:border-slate-700'
+              : 'bg-slate-900 text-white border-transparent hover:bg-slate-800 hover:text-white shadow-md shadow-slate-900/20 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100'
+            }`}
         >
           {token ? (
             <>
